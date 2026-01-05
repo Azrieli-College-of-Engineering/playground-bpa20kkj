@@ -7,19 +7,19 @@ plan:
   - title: Python OOP (IEM)
     description: Python OOP fundamentals, NumPy, pandas, matplotlib.
     plan:
-      - title: Welcome
+      - title: Course Welcome
         statement: markdowns/pythonIEM/welcome.md
 
-      - title: Chapter 7 - Installing Python Libraries
+      - title: Chapter 7 – Installing Python Libraries
         statement: markdowns/pythonIEM/materials/chap7_pylibs.md
 
-      - title: Chapter 8 - NumPy
+      - title: Chapter 8 – NumPy
         statement: markdowns/pythonIEM/materials/chap8_numpy.md
 
-      - title: Chapter 9 - Pandas
+      - title: Chapter 9 – Pandas
         statement: markdowns/pythonIEM/materials/chap9_pandas.md
 
-      - title: Chapter 10 - MatPlotLib
+      - title: Chapter 10 – Matplotlib
         statement: markdowns/pythonIEM/materials/chap10_matplotlib.md
 
 projects:
@@ -28,4 +28,4 @@ projects:
     runner:
       name: python
       version: "3.10"
-    buildCommand: python -m pip install --no-cache-dir -r requirements.txt
+    buildCommand: python -m pip install --upgrade pip && python -m pip install --no-cache-dir -r requirements.txt
