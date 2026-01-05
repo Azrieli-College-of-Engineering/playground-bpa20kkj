@@ -14,7 +14,7 @@
 
 ---
 
-## 7.1 Purpose of This Chapter
+## 7.1 Purpose of This Chapter <a name="71-purpose-of-this-chapter"></a>
 
 This chapter establishes the **software environment foundation** required for the remainder of the course. Before working with NumPy, pandas, and matplotlib, students must understand:
 
@@ -27,7 +27,7 @@ This chapter is **conceptual and practical**. By the end, every student should b
 
 ---
 
-## 7.2 Python Libraries and the Python Ecosystem
+## 7.2 Python Libraries and the Python Ecosystem <a name="72-python-libraries-and-the-python-ecosystem"></a>
 
 ### What Is a Python Library?
 
@@ -56,7 +56,7 @@ In this course, we focus on **scientific and data-oriented libraries**.
 
 ---
 
-## 7.3 Package Management in Python
+## 7.3 Package Management in Python <a name="73-package-management-in-python"></a>
 
 ### What Is `pip`?
 
@@ -83,7 +83,7 @@ You should see a Python 3.x version. For this course, Python **3.10** is recomme
 
 ---
 
-## 7.4 Installing Python Libraries (General)
+## 7.4 Installing Python Libraries (General) <a name="74-installing-python-libraries-general"></a>
 
 ### Installing a Single Library
 
@@ -115,7 +115,7 @@ This guarantees the exact version is installed, which is critical for consistenc
 
 ---
 
-## 7.5 Virtual Environments (Strongly Recommended)
+## 7.5 Virtual Environments (Strongly Recommended) <a name="75-virtual-environments-strongly-recommended"></a>
 
 A **virtual environment** isolates project dependencies from the system Python installation.
 
@@ -143,7 +143,7 @@ Once activated, `pip install` affects only this environment.
 
 ---
 
-## 7.6 Required Libraries for This Course
+## 7.6 Required Libraries for This Course <a name="76-required-libraries-for-this-course"></a>
 
 To ensure consistency across all students and grading environments, this course uses **fixed library versions**.
 
@@ -184,7 +184,7 @@ print(matplotlib.__version__)
 
 ---
 
-## 7.7 Reproducibility with `requirements.txt`
+## 7.7 Reproducibility with `requirements.txt` <a name="77-reproducibility-with-requirementstxt"></a>
 
 In professional environments, dependencies are documented using a `requirements.txt` file.
 
@@ -206,7 +206,7 @@ This guarantees everyone uses **the same versions**.
 
 ---
 
-> ## 7.8 pandas (Spoiler): `append()` vs `concat()`
+> ## 7.8 pandas (Spoiler): `append()` vs `concat()` <a name="78-pandas-spoiler-append-vs-concat"></a>
 > 
 > ### Historical Background
 > 
@@ -465,7 +465,7 @@ This guarantees everyone uses **the same versions**.
 
 ---
 
-## 7.9 Summary
+## 7.9 Summary <a name="79-summary"></a>
 
 By completing this chapter, you should now:
 
