@@ -8,12 +8,14 @@ plan:
   plan:
     - title: Welcome
     - statement: markdowns/pythonIEM/welcome.md
-    - title: Chapter 7 - NumPy
-    - statement: markdowns/pythonIEM/chap7_numpy.md
-    - title: Chapter 8 - Pandas
-    - statement: markdowns/pythonIEM/chap7_numpy.md
-    - title: Chapter 9 - MatPlotLib
-    - statement: markdowns/pythonIEM/chap7_numpy.md
+    - title: Chapter 7 - Installing Python Libraries
+    - statement: markdowns/pythonIEM/materials/chap7_pylibs.md
+    - title: Chapter 8 - NumPy
+    - statement: markdowns/pythonIEM/materials/chap8_numpy.md
+    - title: Chapter 9 - Pandas
+    - statement: markdowns/pythonIEM/materials/chap9_pandas.md
+    - title: Chapter 10 - MatPlotLib
+    - statement: markdowns/pythonIEM/materials/chap10_matplotlib.md
 
 projects:
   python:
