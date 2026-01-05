@@ -1,5 +1,19 @@
 # Chapter 7 – Installing Python Libraries
 
+## Table of Contents
+
+- [7.1 Purpose of This Chapter](#71-purpose-of-this-chapter)
+- [7.2 Python Libraries and the Python Ecosystem](#72-python-libraries-and-the-python-ecosystem)
+- [7.3 Package Management in Python](#73-package-management-in-python)
+- [7.4 Installing Python Libraries (General)](#74-installing-python-libraries-general)
+- [7.5 Virtual Environments (Strongly Recommended)](#75-virtual-environments-strongly-recommended)
+- [7.6 Required Libraries for This Course](#76-required-libraries-for-this-course)
+- [7.7 Reproducibility with `requirements.txt`](#77-reproducibility-with-requirementstxt)
+- [7.8 pandas (Spoiler): `append()` vs `concat()`](#78-pandas-spoiler-append-vs-concat)
+- [7.9 Summary](#79-summary)
+
+---
+
 ## 7.1 Purpose of This Chapter
 
 This chapter establishes the **software environment foundation** required for the remainder of the course. Before working with NumPy, pandas, and matplotlib, students must understand:
@@ -192,7 +206,7 @@ This guarantees everyone uses **the same versions**.
 
 ---
 
-> ## 7.8 pandas - Spoiler: `append()` vs `concat()`
+> ## 7.8 pandas (Spoiler): `append()` vs `concat()`
 > 
 > ### Historical Background
 > 
