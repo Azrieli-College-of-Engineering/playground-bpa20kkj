@@ -1,9 +1,7 @@
 title: "Software Engineering Track (English)"
+statement: markdowns/welcome.md
 
 plan:
-  - title: Welcome
-    statement: markdowns/welcome.md
-
   - title: Python OOP (IEM)
     description: Python OOP fundamentals, NumPy, pandas, matplotlib.
     plan:
