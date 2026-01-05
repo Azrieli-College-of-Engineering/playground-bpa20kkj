@@ -1,10 +1,26 @@
-title: Object Oriented Programming - Python
+title: "Software Engineering Track (English)"
 plan:
 - title: Welcome
   statement: markdowns/welcome.md
+
+- title: Python OOP (IEM)
+  description: Python OOP fundementals, numpy, pandas, matlibplot.
+  plan:
+    - title: Welcome
+    - statement: markdowns/pythonIEM/welcome.md
+    - title: Chapter 7 - NumPy
+    - statement: markdowns/pythonIEM/chap7_numpy.md
+    - title: Chapter 8 - Pandas
+    - statement: markdowns/pythonIEM/chap7_numpy.md
+    - title: Chapter 9 - MatPlotLib
+    - statement: markdowns/pythonIEM/chap7_numpy.md
+
 projects:
   python:
-    root: /python-project
+    root: /python-project-iem
     runner:
       name: python
-      version: '3'
+      version: '3.10'
+    buildCommand:
+      pip install --upgrade pip
+      pip install -r requirements.txt
