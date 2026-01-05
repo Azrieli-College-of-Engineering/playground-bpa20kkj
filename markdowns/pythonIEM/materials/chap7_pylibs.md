@@ -1,5 +1,5 @@
 # Chapter 7 – Installing Python Libraries
-
+<!--
 ## Table of Contents
 
 - [7.1 Purpose of This Chapter](#71-purpose-of-this-chapter)
@@ -11,7 +11,7 @@
 - [7.7 Reproducibility with `requirements.txt`](#77-reproducibility-with-requirementstxt)
 - [7.8 pandas (Spoiler): `append()` vs `concat()`](#78-pandas-spoiler-append-vs-concat)
 - [7.9 Summary](#79-summary)
-
+-->
 ---
 
 ## 7.1 Purpose of This Chapter <a name="71-purpose-of-this-chapter"></a>
