@@ -686,3 +686,67 @@ Boolean masks allow **data filtering without loops**, which is essential for hig
 
 ---
 
+## 8.7 Vectorized Operations (Elementwise Computation)
+
+Vectorization means applying operations to **entire arrays at once** instead of looping through elements one by one. This is one of NumPy’s greatest strengths and the basis of high-performance numerical computing.
+
+---
+
+### 8.7.1 Arithmetic and Comparisons
+
+NumPy overloads standard arithmetic and comparison operators so that they work **element-by-element** on arrays.
+
+```python
+import numpy as np
+
+a = np.array([1, 2, 3])
+b = np.array([10, 20, 30])
+
+print(a + b)   # [11 22 33]
+print(a * b)   # [10 40 90]
+print(a ** 2)  # [1 4 9]
+print(a > 1)   # [False True True]
+```
+
+These operations are vectorized and therefore much faster than Python loops.
+
+---
+
+### 8.7.2 Universal Functions (Ufuncs)
+
+NumPy provides a large collection of optimized **universal functions** (ufuncs) that operate element-wise.
+
+```python
+x = np.array([0.0, 1.0, 4.0])
+print(np.sqrt(x))
+print(np.exp(x))
+print(np.log(x + 1))
+```
+
+Ufuncs handle broadcasting, type conversion, and numerical stability automatically.
+
+---
+
+### 8.7.3 Aggregations and Reductions (`sum`, `mean`, …)
+
+Aggregation functions reduce many values into a single summary.
+
+```python
+m = np.array([[1, 2, 3],
+              [4, 5, 6]])
+
+print(m.sum())
+print(m.mean())
+print(m.min(), m.max())
+```
+
+When working with multi-dimensional arrays, aggregations can be applied along a specific axis:
+
+```python
+print(m.sum(axis=0))  # column sums
+print(m.sum(axis=1))  # row sums
+```
+
+Understanding how aggregation works across axes is essential for data analysis and will be expanded in the next section.
+
+---
