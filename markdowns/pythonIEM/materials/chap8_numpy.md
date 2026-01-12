@@ -494,3 +494,93 @@ Explicit `dtype` control is important when:
 > At this stage, you should be able to create 1D and 2D arrays using multiple constructors and understand when each is appropriate.
 
 In the next section, we will examine **array properties** such as `dtype`, `shape`, and `ndim`, which are essential for debugging and correctness.
+
+---
+
+## 8.5 Core Array Properties
+
+### 8.5.1 `dtype` and Type Casting
+
+NumPy arrays are **homogeneous**: every element in an array has the same data type (`dtype`). This is one of the main reasons NumPy is fast and memory-efficient compared to Python lists.
+
+Example:
+
+```python
+import numpy as np
+
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([1, 2.5, 3])
+
+print(arr1.dtype)   # typically int64
+print(arr2.dtype)   # typically float64
+```
+
+If any element is a float, NumPy promotes the entire array to float. This is called **type promotion**.
+
+You can specify the data type explicitly when creating arrays:
+
+```python
+np.array([1, 2, 3], dtype=float)
+np.zeros((3, 3), dtype=np.int32)
+```
+
+Type casting allows converting an existing array to a different type:
+
+```python
+x = np.array([1.9, 2.1, 3.7])
+print(x.astype(int))   # [1 2 3]
+```
+
+`astype()` always returns a **new array** (a copy), which means it uses additional memory.
+
+---
+
+### 8.5.2 `shape`, `ndim`, `size`
+
+Every NumPy array has three fundamental structural properties:
+
+```python
+m = np.array([[1, 2, 3],
+              [4, 5, 6]])
+
+print(m.shape)  # (2, 3)
+print(m.ndim)   # 2
+print(m.size)   # 6
+```
+
+* `shape` tells you how the data is laid out (rows × columns × …)
+* `ndim` tells you how many dimensions the array has
+* `size` tells you how many total elements exist
+
+These properties are critical for debugging and for using broadcasting, reshaping, and aggregation correctly.
+
+---
+
+### 8.5.3 Views vs Copies (Why It Matters)
+
+Many NumPy operations return a **view** of the data rather than a copy. A view shares the same underlying memory. Modifying a view also modifies the original array.
+
+```python
+arr = np.arange(10)
+sub = arr[2:6]   # this is often a view
+sub[:] = -1
+
+print(arr)
+# array([ 0,  1, -1, -1, -1, -1,  6,  7,  8,  9])
+```
+
+If you need an independent copy, use `.copy()` explicitly:
+
+```python
+arr = np.arange(10)
+sub = arr[2:6].copy()
+sub[:] = -1
+
+print(arr)
+# original array is unchanged
+```
+
+Understanding the difference between **views** and **copies** prevents subtle and dangerous bugs when manipulating subsets of data.
+
+---
+
