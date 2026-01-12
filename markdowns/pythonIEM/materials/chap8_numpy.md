@@ -584,3 +584,105 @@ Understanding the difference between **views** and **copies** prevents subtle an
 
 ---
 
+## 8.6 Indexing, Slicing, and Selecting Data
+
+Indexing and slicing are how you **read, modify, and extract data** from NumPy arrays. Mastering this section is critical, because incorrect indexing silently produces wrong results.
+
+---
+
+### 8.6.1 1D Indexing and Slices
+
+For a one-dimensional array, indexing behaves similarly to Python lists, but slicing returns **views** (not copies) in most cases.
+
+```python
+import numpy as np
+
+arr = np.array([10, 20, 30, 40, 50])
+
+print(arr[0])    # 10
+print(arr[-1])   # 50
+print(arr[1:4])  # [20 30 40]
+print(arr[:3])   # first 3 elements
+print(arr[::2])  # every second element
+```
+
+Slicing does **not** copy data by default:
+
+```python
+sub = arr[1:4]
+sub[:] = 999
+print(arr)      # original array changed
+```
+
+Use `.copy()` if you need an independent array.
+
+---
+
+### 8.6.2 2D Indexing (Row/Column Access)
+
+For 2D arrays (matrices), use `arr[row, col]` syntax.
+
+```python
+m = np.array([[1, 2, 3],
+              [4, 5, 6],
+              [7, 8, 9]])
+
+print(m[0, 1])     # element at row 0, col 1 → 2
+print(m[1])        # full row 1 → [4 5 6]
+print(m[:, 2])     # full column 2 → [3 6 9]
+print(m[0:2, 1:3]) # submatrix
+```
+
+Rows come first, columns second: `array[row, column]`.
+
+---
+
+### 8.6.3 Fancy Indexing (Index Arrays)
+
+Fancy indexing uses arrays (or lists) of indices. This **creates a copy**, not a view.
+
+```python
+arr = np.array([10, 20, 30, 40, 50])
+idx = [0, 2, 4]
+print(arr[idx])  # [10 30 50]
+```
+
+For 2D arrays:
+
+```python
+m = np.arange(1, 10).reshape(3, 3)
+rows = [0, 2]
+cols = [1, 2]
+
+print(m[rows, cols])   # pairs: (0,1) and (2,2)
+```
+
+This selects element-by-element pairs. To get a rectangular region:
+
+```python
+print(m[rows][:, cols])
+```
+
+---
+
+### 8.6.4 Boolean Masking (Filtering)
+
+Boolean masking is the most powerful data-selection technique in NumPy.
+
+```python
+arr = np.array([3, 10, -2, 7, 0])
+mask = arr > 0
+print(mask)        # [ True True False True False]
+print(arr[mask])   # [3 10 7]
+```
+
+Combine conditions (parentheses required):
+
+```python
+print(arr[(arr >= 0) & (arr <= 7)])
+```
+
+Boolean masks allow **data filtering without loops**, which is essential for high-performance analytics.
+
+---
+
